@@ -1,33 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script type="importmap">
-        {
-            "imports": {
-                "socket.io-client": "https://cdn.socket.io/4.4.1/socket.io.esm.min.js"
-            }
-        }
-    </script>
-    <script type="module">
-        import {io} from "socket.io-client";
-        const socket = new io("wss://web-phone-socket.onrender.com:3000");
-        //const socket = new io("ws://localhost:3000");
-
-        document.querySelectorAll('.button')[0].addEventListener('click', () => {
-            socket.emit('button-pressed');
-        });
-
-        socket.on('button-pressed', () => {
-            document.body.style.color = 'red';
-        });
-    </script>
-</head>
-<body>
-    <h1>Hello World!</h1>
-    <button class="button">Press Me!</button>
-</body>
+    <title>Socket.io Example</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Socket.io Example</h1>
+    <button id="button">Click me!</button>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../client.js"></script>
+  </body>
 </html>
