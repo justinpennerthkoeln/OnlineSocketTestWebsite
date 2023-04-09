@@ -15,7 +15,7 @@
     <script type="module">
         import {io} from "socket.io-client";
         const socket = new WebSocket('wss://web-phone-socket.onrender.com:3000/socket.io/?EIO=4&transport=websocket', {
-            transports: ['polling', 'sse']
+            transports: ['polling', 'sse', 'websocket'],
         });
 
         document.querySelectorAll('.button')[0].addEventListener('click', () => {
