@@ -21,7 +21,7 @@ io.on('connection', (socket) => {
     console.log('A user has connected!');
 
     socket.on('button-pressed', () => {
-        console.log('Button pressed!');
+        io.to(socket.id).emit('button-pressed');
     });
 });
 
