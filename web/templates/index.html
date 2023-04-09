@@ -14,10 +14,15 @@
     </script>
     <script type="module">
         import {io} from "socket.io-client";
-        const socket = io("https://web-phone-socket.onrender.com:3000");
+        var socket = io.connect('http://web-phone-socket.onrender.com/:3000');
+
+        document.querySelectorAll('.button')[0].addEventListener('click', () => {
+            socket.emit('button-pressed');
+        });
     </script>
 </head>
 <body>
     <h1>Hello World!</h1>
+    <button class="button">Press Me!</button>
 </body>
 </html>
