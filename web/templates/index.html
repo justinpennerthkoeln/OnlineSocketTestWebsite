@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Document</title>
     <script type="importmap">
         {
@@ -15,8 +14,7 @@
     </script>
     <script type="module">
         import {io} from "socket.io-client";
-        //const socket = io("wss://web-phone-socket.onrender.com:3000");
-        const socket = io("ws://localhost:3000")
+        const socket = io("https://web-phone-socket.onrender.com:3000");
     </script>
 </head>
 <body>
