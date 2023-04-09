@@ -14,9 +14,7 @@
     </script>
     <script type="module">
         import {io} from "socket.io-client";
-        const socket = new WebSocket('wss://web-phone-socket.onrender.com:3000/socket.io/?EIO=4&transport=websocket', {
-            transports: ['polling', 'sse', 'websocket'],
-        });
+        const socket = new io("wss://web-phone-socket.onrender.com:3000");
 
         document.querySelectorAll('.button')[0].addEventListener('click', () => {
             socket.emit('button-pressed');
