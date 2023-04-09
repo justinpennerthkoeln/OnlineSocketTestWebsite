@@ -14,7 +14,7 @@
     </script>
     <script type="module">
         import {io} from "socket.io-client";
-        var socket = io.connect('https://web-phone-socket.onrender.com:3000');
+        var socket = io.connect('https://web-phone-socket.onrender.com/:3000');
 
         document.querySelectorAll('.button')[0].addEventListener('click', () => {
             socket.emit('button-pressed');
