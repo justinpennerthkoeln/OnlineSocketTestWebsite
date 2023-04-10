@@ -1,11 +1,15 @@
 var http = require('http');
 var express = require('express');
 var socketIo = require('socket.io');
+const cors = require('cors');
 var fs = require('fs');
 const path = require('path');
 
 const app = express();
 const server = http.createServer(app);
+app.use(cors({
+    origin: 'https://justinpennerthkoeln.github.io/OnlineSocketTestWebsite/'
+}));
 const io = new socketIo.Server(server, {
     
 });
