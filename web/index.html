@@ -13,7 +13,7 @@
     </script>
     <script type="module">
       import {io} from "socket.io-client";
-      const socket = io("ws://justinpennerthkoeln.github.io/OnlineSocketTestWebsite/:3000");
+      const socket = io("ws://justinpennerthkoeln.github.io/OnlineSocketTestWebsite");
 
       document.querySelectorAll('.button')[0].addEventListener('click', () => {
         socket.emit('button-pressed');
