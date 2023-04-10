@@ -18,10 +18,14 @@ app.get("/", (req, res) => {
 });
 
 io.on('connection', (socket) => {
-    console.log('A user has connected!');
+    console.log('A user has connected: ' + socket.id);
 
     socket.on('button-pressed', () => {
         io.to(socket.id).emit('button-pressed');
+    });
+
+    socket.on('disconnect', () => {
+        console.log('A user dissconnected: ' + socket.id)
     });
 });
 

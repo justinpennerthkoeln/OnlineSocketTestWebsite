@@ -3,12 +3,29 @@
   <head>
     <meta charset="UTF-8">
     <title>Socket.io Example</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="importmap">
+      {
+        "imports" : {
+          "socket.io-client": "https://cdn.socket.io/4.4.1/socket.io.esm.min.js"
+        }
+      }
+    </script>
+    <script type="module">
+      import {io} from "socket.io-client";
+      const socket = io("ws://localhost:3000");
+
+      document.querySelectorAll('.button')[0].addEventListener('click', () => {
+        socket.emit('button-pressed');
+      });
+
+      socket.on('button-pressed', () => {
+        document.querySelectorAll('h1')[0].style.color='red';
+      });
+    </script>
   </head>
   <body>
     <h1>Socket.io Example</h1>
-    <button id="button">Click me!</button>
-    
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="../client.js" type="module"></script>
+    <button class="button">Click me!</button>
   </body>
 </html>
