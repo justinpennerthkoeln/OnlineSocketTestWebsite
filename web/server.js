@@ -12,7 +12,7 @@ const io = new socketIo.Server(server, {
 
 
 app.get("/", (req, res) => {
-    const filePath = path.join(__dirname, 'templates', 'index.html');
+    const filePath = path.join(__dirname, 'index.html');
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     res.send(fileContent);
 });
