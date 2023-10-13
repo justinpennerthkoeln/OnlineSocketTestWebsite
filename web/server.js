@@ -21,6 +21,10 @@ app.get("/", (req, res) => {
     res.send(fileContent);
 });
 
+app.get("/test", (req, res) => {
+     res.send("test");   
+})
+
 io.on('connection', (socket) => {
     console.log('A user has connected: ' + socket.id);
 
